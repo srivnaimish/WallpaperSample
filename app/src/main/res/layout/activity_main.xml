@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mentorship.view.MainActivity"
+    android:id="@+id/main_background">
+
+    <ImageView
+        android:id="@+id/image_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dummy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/frame"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintVertical_weight="0.4"
+        />
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/search_box"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackgroundBorderless"
+        card_view:cardBackgroundColor="?colorPrimary"
+        card_view:cardElevation="4dp"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        card_view:layout_constraintVertical_bias="0.4">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp">
+
+            <EditText
+                android:id="@+id/search_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Search for image"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textColorHint="#636363"
+                android:textSize="16sp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintEnd_toStartOf="@+id/search"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_search"
+                card_view:layout_constraintBottom_toBottomOf="@+id/search_edit"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="@+id/search_edit"
+                android:visibility="gone"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_background"
+        android:paddingTop="35dp"
+        app:layout_constraintVertical_weight="0.6">
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/cat3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/ic_nature"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Nature"
+                android:textColor="?colorPrimary"
+                android:onClick="suggestionClicked"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/cat2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/ic_architecture"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Buildings"
+                android:textColor="?colorPrimary"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="suggestionClicked"/>
+
+            <TextView
+                android:id="@+id/cat1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/ic_sports"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Sports"
+                android:textColor="?colorPrimary"
+                android:onClick="suggestionClicked"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll1">
+
+            <TextView
+                android:id="@+id/cat6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/ic_cars"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Cars"
+                android:textColor="?colorPrimary"
+                android:onClick="suggestionClicked"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/cat4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/ic_wildlife"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Wildlife"
+                android:textColor="?colorPrimary"
+                android:onClick="suggestionClicked"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/cat5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:drawablePadding="8dp"
+                android:drawableTop="@drawable/ic_travel"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Travel"
+                android:textColor="?colorPrimary"
+                android:onClick="suggestionClicked"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Snaps"
+        android:textColor="?colorPrimary"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/search_box"
+        app:layout_constraintStart_toStartOf="@+id/search_box"
+        app:layout_constraintTop_toTopOf="@+id/image_background" />
+
+</android.support.constraint.ConstraintLayout>
